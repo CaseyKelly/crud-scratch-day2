@@ -1,0 +1,30 @@
+<h1>Sharks</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Names</th>
+        <th>Size</th>
+        <th>Species</th>
+        <th>Date of Attack</th>
+        <th>Maneater?</th>
+      </tr>
+    </thead>
+
+    <p><%= link_to 'New Shark', new_shark_path %></p>
+
+    <tbody>
+      <% @sharks.each do |shark| %>
+            <tr>
+              <td><%= link_to shark.name, shark %></td>
+              <td><%= shark.size %></td>
+              <td><%= shark.species %></td>
+              <td><%= shark.date_of_attack %></td>
+              <td><%= shark.maneater %></td>
+              <td><%= link_to 'Edit', edit_shark_path(shark) %>
+              <%= link_to 'Delete', shark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td>
+            </tr>
+          <% end %>
+    </tbody>
+  </table>

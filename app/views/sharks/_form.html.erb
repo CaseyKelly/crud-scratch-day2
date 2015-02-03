@@ -1,0 +1,24 @@
+<h1>New Shark</h1>
+
+<%= form_for @shark do |f| %>
+
+<p><%= f.label :name %>
+<%= f.text_field :name %></p>
+
+<p><%= f.label :size, "Size (in feet)" %>
+<%= f.number_field :size %></p>
+
+<p><%= f.label :species %>
+<%= f.text_field :species %></p>
+
+<p><%= f.label :date_of_attack %>
+<%= f.date_select :date_of_attack %></p>
+
+<p><%= f.label :maneater, "Maneater?" %>
+<%= f.check_box :maneater %></p>
+
+<%= f.submit 'Submit' %>
+
+<% end %>
+
+<p><%= link_to 'Back', sharks_path %></p>
